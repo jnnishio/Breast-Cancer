@@ -1,7 +1,7 @@
 # Automatic Breast Cancer Classification 
 
-Paper: [link](https://doi.org/10.1109/FMLDS63805.2024.00075)
-Slides: [pdf](https://github.com/kneshio/Breast-Cancer/blob/main/Breast%20Cancer%20Slides%20FMLDS2024.pdf)
+IEEE Published Paper: [Link](https://doi.org/10.1109/FMLDS63805.2024.00075)
+Conference Slides: [pdf](https://github.com/kneshio/Breast-Cancer/blob/main/Breast%20Cancer%20Slides%20FMLDS2024.pdf)
 
 This study leverages the pre-trained ResNet50 and VGG19 models for detecting breast cancer in histopathological images from the BreakHis dataset. 
 
