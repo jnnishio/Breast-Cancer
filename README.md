@@ -1,26 +1,26 @@
-# Automatic Breast Cancer Classification 
+# Automated Breast Cancer Classification 
 
-IEEE Published Paper: [Link](https://doi.org/10.1109/FMLDS63805.2024.00075)
+Published IEEE Paper: [Link](https://doi.org/10.1109/FMLDS63805.2024.00075)
 
-Conference Slides: [pdf](https://github.com/kneshio/Breast-Cancer/blob/main/Breast%20Cancer%20Slides%20FMLDS2024.pdf)
+Conference Slides: [pdf](https://github.com/jnnishio/Breast-Cancer/blob/main/Breast%20Cancer%20Slides%20FMLDS2024.pdf)
 
 This study leverages the pre-trained ResNet50 and VGG19 models for detecting breast cancer in histopathological images from the BreakHis dataset. 
 
 **A.	BreakHis Dataset**
 
-BreakHis dataset used in this study consists of 7,909 microscopic images of breast tumor tissue collected from 82 patients at various magnification factors, 40×, 100×, 200× and 400×. The dataset is divided into 8 tumor types. Four types of benign breast tumors are adenosis (A), fibroadenoma (F), phyllodes tumor (PT), and tubular adenoma (TA); and four types of malignant tumors (breast cancer) are ductal carcinoma (DC), lobular carcinoma (LC), mucinous carcinoma (MC) and papillary carcinoma (PC). 
+The BreakHis dataset used in this study consists of 7,909 microscopic images of breast tumor tissue collected from 82 patients at various magnification factors, 40×, 100×, 200× and 400×. The dataset is divided into 8 tumor types. Four types of benign breast tumors are adenosis (A), fibroadenoma (F), phyllodes tumor (PT), and tubular adenoma (TA); and four types of malignant tumors (breast cancer) are ductal carcinoma (DC), lobular carcinoma (LC), mucinous carcinoma (MC) and papillary carcinoma (PC). 
 
 **B.	Image Preprocessing and Classification Flow**
 
 The images, initially sized at 700×460×3, were resized to a resolution of 224×224×3. The dataset was then partitioned into 70% for training and 30% for testing. Since the data is imbalanced, the deep learning models’ classification performance before and after data augmentation was investigated and compared. To address the imbalance, SMOTE (Synthetic Minority Over-sampling Technique) library was utilized. This involves oversampling the minority class images by randomly applying horizontal flipping, vertical flipping, and rotation, ensuring that all seven minority classes are augmented to match the size of the majority subclass. This augmentation process increases the training set from 5536 to 19323 samples, with each subclass containing 2404 samples. It's worth noting that regardless of whether data augmentation is applied, the normalization process outlined in the following subsection is implemented before training begins.
 
-**C.  RGB Z-Score Normalization (or Standardization)**
+**C.  RGB Z-Score Normalization (or standardization)**
 
 This study utilized color z-score normalization, which is different from the normalization methods in other research. When the images are converted into PyTorch tensors, the original pixel range of [0, 255] is scaled to a PyTorch tensor range of [0.0, 1.0]. The means and standard deviations of the RGB channels across the whole training images are computed and utilized for z-score normalization. This normalization process effectively minimizes color and brightness variations, contributing to enhanced training robustness and improved accuracy.
 
-**D.	Convolutional Neural Network and Transfer Learning**
+**D.	Convolutional Neural Networks and Transfer Learning**
 
-In this study, the pre-trained VGG16 was first utilized, but the performance was not satisfied. ResNet50 and VGG19 were later selected for the classification of breast cancers from the histopathological images due to their remarkable performance in image classification, object detection, and image segmentation.
+In this study, the pre-trained VGG16 was first utilized, but the performance was not promising. ResNet50 and VGG19 were later selected for the classification of breast cancers from the histopathological images due to their remarkable performance in image classification, object detection, and image segmentation.
 
 The Adam optimization function is chosen for its superior accuracy and quicker convergence compared to SGD. An adaptive learning rate strategy begins at 0.0003, gradually decreasing to 1e-5. 
 
@@ -38,4 +38,4 @@ Finally, the impact of dataset balance on classification performance is examined
 
 **F. Publication**
 
-[2024 IEEE International Conference on Future Machine Learning and Data Science](https://www.fmlds.org/AcceptedPapers.php)
+[2024 IEEE International Conference on Future Machine Learning and Data Science](https://doi.org/10.1109/FMLDS63805.2024.00075)
